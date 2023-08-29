@@ -12,6 +12,11 @@ class  GameBoard
             puts '--------------------------------'
         end
     end
+
+    def place_knight(knight, position)
+        x, y = position
+        @board[x][y] = knight
+    end
 end
 
 class Knight
