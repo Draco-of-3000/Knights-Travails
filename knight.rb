@@ -13,3 +13,21 @@ class  GameBoard
         end
     end
 end
+
+class Knight
+    attr_accessor :position
+
+    def initialize(position)
+        @position = position
+    end
+    
+    def to_s
+        '♞'
+    end
+end
+
+chess_board = GameBoard.new
+knight = Knight.new([0, 0])
+chess_board.place_knight(knight, knight.position)
+
+chess_board.display
