@@ -44,7 +44,7 @@ class GameBoard
     private
 
     def valid_moves(position)
-        x,y = position
+        x, y = position
         moves = [
             [x + 1, y + 2], [x + 2, y + 1],
             [x - 1, y + 2], [x - 2, y + 1],
@@ -53,7 +53,7 @@ class GameBoard
         ]
 
         moves.select do |move|
-            move[0].between?(0, 7) && move[1].between?(0,1)
+            move[0].between?(0, 7) && move[1].between?(0, 7)
         end
     end
 end
@@ -69,9 +69,3 @@ class Knight
         ' ♞ '
     end
 end
-
-chess_board = GameBoard.new
-knight = Knight.new([0, 5])
-chess_board.place_knight(knight, knight.position)
-
-chess_board.display
