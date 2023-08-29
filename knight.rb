@@ -40,6 +40,22 @@ class GameBoard
             end
         end
     end
+
+    private
+
+    def valid_moves(position)
+        x,y = position
+        moves = [
+            [x + 1, y + 2], [x + 2, y + 1],
+            [x - 1, y + 2], [x - 2, y + 1],
+            [x + 1, y - 2], [x + 2, y - 1],
+            [x - 1, y - 2], [x - 2, y - 1]
+        ]
+
+        moves.select do |move|
+            move[0].between?(0, 7) && move[1].between?(0,1)
+        end
+    end
 end
 
 class Knight
