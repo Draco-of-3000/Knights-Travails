@@ -29,7 +29,12 @@ class GameBoard
             path = queue.shift
             current_position = path.last.position
 
-            return path.map(&:position) if current_position == destination_square
+            if current_position == destination_square
+                return {
+                    moves: path.length - 1,
+                    path: path.map(&:position)
+                }
+            end
 
             valid_moves(current_position).each do |move|
                 next if visited.include?(move)
@@ -39,6 +44,7 @@ class GameBoard
                 visited << move
             end
         end
+        nil
     end
 
     private
