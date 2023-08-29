@@ -1,4 +1,4 @@
-class  GameBoard
+class GameBoard
     attr_reader :board
 
     def initialize
