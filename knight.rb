@@ -75,3 +75,21 @@ class Knight
         ' ♞ '
     end
 end
+
+chess_board = GameBoard.new
+knight = Knight.new([3, 3])
+chess_board.place_knight(knight, knight.position)
+
+chess_board.display
+
+# Test the knight_moves function
+start = [3,3]
+destination = [4,3]
+result = chess_board.knight_moves(start, destination)
+
+if result
+  puts "You made it in #{result[:moves]} moves! Here's your path:"
+  result[:path].each { |position| puts position.inspect }
+else
+  puts "No valid path found."
+end
